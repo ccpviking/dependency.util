@@ -5,6 +5,7 @@ namespace dependency.tests
 {
 	public static class Extensions
 	{
+		// Returns <applicationPath>\<filename> as string
 		public static string ToApplicationPath(this string fileName)
 		{
 			var exePath = Path.GetDirectoryName(System.Reflection
