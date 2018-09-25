@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dependency.web", "dependenc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dependency.tests", "dependency.tests\dependency.tests.csproj", "{FCC44CD5-1DCF-4946-A228-8307800CB48B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dependency.lib", "dependency.lib\dependency.lib.csproj", "{1D276869-FE31-4E78-8F7C-06359D2B8964}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{FCC44CD5-1DCF-4946-A228-8307800CB48B}.Release|x64.Build.0 = Release|Any CPU
 		{FCC44CD5-1DCF-4946-A228-8307800CB48B}.Release|x86.ActiveCfg = Release|Any CPU
 		{FCC44CD5-1DCF-4946-A228-8307800CB48B}.Release|x86.Build.0 = Release|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Debug|x64.Build.0 = Debug|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Release|x64.ActiveCfg = Release|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Release|x64.Build.0 = Release|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D276869-FE31-4E78-8F7C-06359D2B8964}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
