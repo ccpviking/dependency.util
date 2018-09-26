@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace dependency.tests
 {
-	public static class Extensions
+	public static class TestExtensions
 	{
 		// Returns <applicationPath>\<filename> as string
 		public static string ToApplicationPath(this string fileName)
