@@ -15,7 +15,7 @@ namespace dependency.tests
 		[Fact]
 		public void ParseFileAsExpected()
 		{
-			var parser = new InputParser();
+			var parser = (IInputParser)new InputParser();
 			var input = parser.ParseFile(validInput.ToApplicationPath());
 			Assert.NotEmpty(input);
 		}
@@ -24,7 +24,7 @@ namespace dependency.tests
 		public void NoFileThrowsException()
 		{
 			Exception exception = null;
-			var parser = new InputParser();
+			var parser = (IInputParser)new InputParser();
 			try
 			{
 				parser.ParseFile("not_a_file".ToApplicationPath());
@@ -40,7 +40,7 @@ namespace dependency.tests
 		public void WrongFileFormatThrowsException()
 		{
 			Exception exception = null;
-			var parser = new InputParser();
+			var parser = (IInputParser)new InputParser();
 			try
 			{
 				parser.ParseFile("input_bad_format.txt".ToApplicationPath());

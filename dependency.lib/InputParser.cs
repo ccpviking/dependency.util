@@ -5,7 +5,13 @@ using Newtonsoft.Json;
 
 namespace dependency.lib
 {
-	public class InputParser
+	public interface IInputParser
+	{
+		List<string> ParseFile(string path);
+		List<string> Parse(string input);
+	}
+
+	public class InputParser : IInputParser
 	{
 		public List<string> ParseFile(string path)
 		{
