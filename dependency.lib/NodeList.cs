@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text;
 
 namespace dependency.lib
 {
@@ -19,6 +21,26 @@ namespace dependency.lib
 			}
 			// if we reach this point, the node does not exist
 			return null;
+		}
+
+		public bool HasLeafNode()
+		{
+			foreach (var item in Items)
+			{
+				if (item.DependsOn == null)
+					return true;
+			}
+			return false;
+		}
+
+		public string CommaDelimitedString()
+		{
+			var builder = new StringBuilder();
+			foreach (var item in Items)
+			{
+				builder.Append(item.CommaDelimitedString());
+			}
+			return builder.ToString();
 		}
 	}
 }

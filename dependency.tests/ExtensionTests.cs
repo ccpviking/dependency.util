@@ -11,7 +11,7 @@ namespace dependency.tests
 	public class ExtensionTests
 	{
 		[Fact]
-		public void KvpListCreatedAsExpected()
+		public void TupleListCreatedAsExpected()
 		{
 			var list = new List<string>
 			{
@@ -22,13 +22,13 @@ namespace dependency.tests
 				"Fraudstream: Leetmeme",
 				"Ice: "
 			};
-			var kvpList = list.ToKvpList();
-			Assert.True(kvpList.Count == 6);
-			Assert.True(kvpList[5].Key.StartsWith("Ice"));
+			var pairs = list.ToTupleList();
+			Assert.True(pairs.Count == 6);
+			Assert.True(pairs[5].Item1.StartsWith("Ice"));
 		}
 
 		[Fact]
-		public void KvpListExpectedBadFormat()
+		public void TupleListExpectedBadFormat()
 		{
 			var list = new List<string>
 			{
@@ -37,7 +37,7 @@ namespace dependency.tests
 			Exception exception = null;
 			try
 			{
-				list.ToKvpList();
+				list.ToTupleList();
 			}
 			catch (FormatException ex)
 			{

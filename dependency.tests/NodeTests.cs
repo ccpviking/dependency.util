@@ -1,8 +1,4 @@
-using System;
-using System.IO;
-using System.Reflection;
 using dependency.lib;
-using Newtonsoft.Json;
 using Xunit;
 
 namespace dependency.tests
@@ -14,9 +10,8 @@ namespace dependency.tests
 		{
 			_root = new Node<string>
 			{
-				Value = "three",
-				Left = new Node<string> { Value = "one", Left = new Node<string> { Value = "zero" }, Right = new Node<string> { Value = "two" } },
-				Right = new Node<string> { Value = "five", Left = new Node<string> { Value = "four" }, Right = new Node<string> { Value = "six" } }
+				Value = "two",
+				DependsOn = new Node<string> { Value = "one", DependsOn = new Node<string> { Value = "zero" } }
 			};
 		}
 
@@ -24,7 +19,7 @@ namespace dependency.tests
 		public void NodeIsFoundAsExpected()
 		{
 			Init();
-			var node = _root.FindByValue("six");
+			var node = _root.FindByValue("one");
 			Assert.NotNull(node);
 		}
 
@@ -41,7 +36,7 @@ namespace dependency.tests
 		{
 			Init();
 			var cds = _root.CommaDelimitedString();
-			Assert.Equal("zero, one, two, three, four, five, six, ", cds);
+			Assert.Equal("zero, one, two, ", cds);
 		}
 	}
 }
