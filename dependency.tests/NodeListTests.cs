@@ -9,17 +9,25 @@ namespace dependency.tests
 {
 	public class NodeListTests
 	{
-		private NodeList<string> _list;
-
-		private void Init()
-		{
-			_list = new NodeList<string>();
-		}
-
 		[Fact]
 		public void NodeListCommaDelimitedStringWorksAsExpected()
 		{
-			throw new NotImplementedException();
+			var list = new NodeList<string>();
+
+			var root = new Node<string>
+			{
+				Value = "two",
+				DependsOn = new Node<string> { Value = "one", DependsOn = new Node<string> { Value = "zero" } }
+			};
+			list.Add(root);
+			root = new Node<string>
+			{
+				Value = "five",
+				DependsOn = new Node<string> { Value = "four", DependsOn = new Node<string> { Value = "three" } }
+			};
+			list.Add(root);
+			var actual = list.CommaDelimitedString();
+			Assert.True(actual.Contains("zero, one, two, three, four, five"));
 		}
 	}
 }
